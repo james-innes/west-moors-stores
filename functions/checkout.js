@@ -29,21 +29,23 @@ exports.handler = async ({ body }) => {
 			},
 			idempotencyKey: uuidv4(),
 		})
-		.then(() =>
-			mongo.connect().then(() =>
-				mongo
-					.db("stores")
-					.collection("order")
-					.insertOne({
-						email,
-						basket,
-						total,
-						address,
-						location,
-						status: "new",
-					})
-					.then(r => r.insertedId, mongo.close())
-			)
+		.then(
+			() =>
+				mongo.connect().then(() =>
+					mongo
+						.db("bha9r1zpbe6r8i5")
+						.collection("order")
+						.insertOne({
+							email,
+							basket,
+							total,
+							address,
+							location,
+							status: "new",
+						})
+						.then(r => r.insertedId)
+				),
+			mongo.close()
 		)
 		.then(id =>
 			mail.sendMail({
