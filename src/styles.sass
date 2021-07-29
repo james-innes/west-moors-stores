@@ -1,0 +1,257 @@
+$primary: #3bc599
+$light: #e5fdef
+$border: #b0ebc7
+$hover: #5adfa1
+$gray: #dfe1e5
+$thick: 2px
+$radius: 0.6rem
+
+body
+	font-family: "Inter", sans-serif
+	font-weight: 400
+	color: #404145
+	font-size: 16px
+	line-height: 1.4
+	width: calc(100% - 1.5rem)
+	max-width: 65rem
+	min-height: 100vh
+	margin: 1.5rem auto 2rem auto
+	overflow-wrap: break-word
+	-webkit-tap-highlight-color: transparent
+
+label
+	font-weight: 500
+	display: flex
+	flex-direction: column
+
+*
+	border-radius: $radius
+	outline: none
+
+a
+	color: $primary
+
+	&:hover
+		color: $hover
+
+h2,
+h4
+	margin-bottom: 0.5rem
+	& + p
+		margin-top: 0
+
+h1, h2, h3, h4
+	font-weight: 600
+	color: #586069
+
+button
+	display: inline-flex
+	align-items: center
+	cursor: pointer
+	font-weight: 600
+	color: $primary
+	border: $thick solid $border
+	background-color: $light
+	padding: 0.5rem 0.6rem
+	margin-top: 1rem
+	touch-action: manipulation
+	box-shadow: #ced8d2 0px 3px 6px -1px
+
+	&:active
+		transform: scale(0.9)
+
+button[type="reset"]
+	border-color: #ff9fb2
+	background: #ffd2db
+	color: #e02c53
+
+	&:enabled:hover
+		background: #ffc9d5
+		border-color: #e94468
+
+.radio
+	box-shadow: none
+	border-radius: 2rem
+	padding: 0.3rem 0.6rem
+	margin-top: 0.5rem
+	margin-right: 0.5rem
+
+	&:not(.active)
+		font-weight: 500
+		color: unset
+		border-color: $gray
+		background: white
+
+.sq-input,
+input,
+select,
+details
+	font: inherit
+	box-sizing: border-box
+	appearance: none
+	vertical-align: middle
+	color: #0e1e25
+	background-color: #f8fffb
+	border: $thick solid $border
+	height: 2.25rem
+	padding: 0.5rem
+	line-height: 1
+	max-width: 30rem
+	margin-top: 0.25rem
+	width: 100%
+
+details
+	border: $thick solid $gray
+	background: unset
+	margin: 1rem 0 1rem 0
+	height: unset
+	max-width: fit-content
+
+summary
+	display: list-item
+	color: $primary
+	cursor: pointer
+
+[open] summary
+	margin-bottom: 0.5rem
+
+select
+	font-weight: 600
+	color: $primary
+
+.sq-input--focus,
+*:focus::not(details)
+	border-color: $hover
+
+.sq-input:hover:not(.error),
+*:enabled:hover:not(.error)
+	border-color: $hover
+
+button:enabled:hover:not(.error)
+	background-color: #ccffea
+
+:disabled, .disabled
+	cursor: not-allowed !important
+	opacity: 0.3
+
+.sq-input--error,
+.error
+	border-color: #f03a5f !important
+	border-style: solid
+	border-width: $thick
+
+hr
+	border: none
+	width: 90%
+	border-top: 1px solid $gray
+	margin: 1.5rem 0
+
+	@media (max-width: 760px)
+		margin: 1rem 0
+
+.outline
+	position: relative
+	border: 1.5px solid $gray
+	padding: 2rem
+	margin-top: 1.5rem
+	background: white
+
+	& >
+		:first-child
+			margin-top: 0
+
+		:last-child
+			margin-bottom: 0
+
+	@media (max-width: 760px)
+		padding: 1rem
+		margin: 1rem 0
+
+form label
+	margin-bottom: 0.6rem
+
+small
+	margin-left: 0.5rem
+	font-size: 80%
+
+table
+	display: block
+	overflow-x: auto
+	overflow-y: hidden
+	border-collapse: collapse
+	text-indent: 0
+	border-color: inherit
+
+	*
+		margin: 0 !important
+
+	tr:not(:first-child)
+		border-top: 1.5px solid $gray
+
+	th
+		font-weight: 500
+
+	td,
+	th
+		padding: 0.4rem
+
+img
+	display: block
+	object-fit: scale-down
+	margin: 0
+	max-width: 100%
+
+.modal
+	z-index: 10
+	position: fixed
+	top: 50%
+	left: 50%
+	width: 80%
+	transform: translate(-50%, -50%)
+	max-width: 45rem
+	overflow-x: auto
+	box-shadow: #9f9fa1 0 0 10rem 2rem
+	margin: 0
+
+	.close
+		position: absolute
+		top: 0rem
+		right: 1rem
+		float: right
+		display: block
+		z-index: 10
+
+::-webkit-scrollbar
+	width: 15px
+
+::-webkit-scrollbar-track
+	background: white
+	border-radius: $radius
+
+::-webkit-scrollbar-thumb
+	background: $light
+	border-radius: $radius
+	border: $thick solid $border
+
+::-webkit-scrollbar-thumb:hover
+	border-color: $hover
+	background: #ccffea
+
+// CSS Reset
+
+.sq-input,
+button,
+input
+	font-family: inherit
+	font-size: 100%
+	line-height: 1.15
+
+b
+	font-weight: 600
+
+::-moz-focus-inner
+	border-style: none
+	padding: 0
+
+:-moz-ui-invalid
+	box-shadow: none
