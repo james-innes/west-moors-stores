@@ -8,7 +8,7 @@ export const catalog = array.map(row => {
 		barcode,
 		price,
 		name,
-		img: "https://www.booker.co.uk/bbimages" + img,
+		img: "https://media.booker.co.uk/bbimages" + img,
 		qty,
 		cat,
 	};
